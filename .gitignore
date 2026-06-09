@@ -39,3 +39,9 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# Gemini & Graphify
+graphify-out/
+AGENTS.md
+CLAUDE.md
+.claude/
