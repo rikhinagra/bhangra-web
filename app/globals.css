@@ -1,26 +1,154 @@
 @import "tailwindcss";
 
+@theme {
+  --color-navy-deep:      #060E1E;
+  --color-navy:           #0D1B3E;
+  --color-navy-light:     #152548;
+  --color-gold:           #FFD700;
+  --color-gold-bright:    #F5C518;
+  --color-gold-muted:     #C9A227;
+  --color-saffron:        #FF6B35;
+  --color-saffron-bright: #FF8C42;
+  --color-cream:          #FFF9E6;
+  --font-display: 'Yatra One', serif;
+  --font-serif:   'Cormorant Garamond', Georgia, serif;
+  --font-sans:    'Manrope', -apple-system, sans-serif;
+}
+
+/* ── Reset ── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+  max-width: 100%;
+}
+body {
+  font-family: var(--font-sans);
+  background: var(--color-navy-deep);
+  color: #ffffff;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+  max-width: 100%;
+  width: 100%;
+}
+a { color: inherit; text-decoration: none; }
+img { max-width: 100%; display: block; }
+
+/* ══════════════════════════════════════════
+   RESPONSIVE DESIGN TOKENS
+   All layout values live here as CSS custom
+   properties so inline styles stay responsive
+   ══════════════════════════════════════════ */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* ── Spacing / padding ── */
+  --s-hero:        7rem 2rem 5rem;
+  --s-section:     9rem 2.5rem;
+  --hero-crest:    140px;
+  --hero-justify:  center;
+  --hero-cta-dir:  row;
+  --nav-pad-h:     1.75rem;
+  --s-cta:         9rem 2rem;
+  --s-footer:      5rem 2.5rem 2rem;
+  --s-page-header: 8rem 2rem 4rem;
+  --s-inner:       0 2.5rem 6rem;
+  --s-form:        3rem;
+  --s-venue-left:  6rem 4rem;
+
+  /* ── Grid columns ── */
+  --g-about:       1.4fr 1fr;
+  --g-about-gap:   5rem;
+  --g-stats:       1fr 1fr;
+  --g-venue:       1fr 1fr;
+  --g-book:        1.6fr 1fr;
+  --g-contact:     1.4fr 1fr;
+  --g-footer:      2fr 1fr 1fr;
+  --g-form-row:    1fr 1fr;
+  --g-class-opts:  repeat(auto-fill, minmax(200px, 1fr));
+
+  /* ── Misc ── */
+  --aside-pos:     sticky;
+  --venue-map-h:   100%;
+
+  /* ── Navbar show/hide ── */
+  --nav-links-d:   flex;
+  --nav-cta-d:     inline-flex;
+  --nav-burger-d:  none;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
+/* ── 1100px ── */
+@media (max-width: 1100px) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --g-about-gap:  3.5rem;
+    --s-venue-left: 5rem 3rem;
+    --g-footer:     1.5fr 1fr 1fr;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+/* ── 960px  — main breakpoint ── */
+@media (max-width: 960px) {
+  :root {
+    --s-section:     6rem 2rem;
+    --s-cta:         6rem 2rem;
+    --s-footer:      4rem 2rem 2rem;
+    --s-page-header: 7rem 1.5rem 3rem;
+    --s-inner:       0 1.5rem 4rem;
+    --s-venue-left:  4rem 2rem;
+
+    --g-about:       1fr;
+    --g-about-gap:   3rem;
+    --g-venue:       1fr;
+    --g-book:        1fr;
+    --g-contact:     1fr;
+    --g-footer:      1fr;
+    --aside-pos:     static;
+    --venue-map-h:   380px;
+
+    --nav-links-d:   none;
+    --nav-cta-d:     none;
+    --nav-burger-d:  flex;
+    --nav-pad-h:     1rem;
+  }
 }
+
+/* ── 640px ── */
+@media (max-width: 640px) {
+  :root {
+    --s-hero:        5.5rem 1.25rem 4rem;
+    --s-section:     5rem 1.25rem;
+    --s-cta:         5rem 1.25rem;
+    --s-footer:      3.5rem 1.25rem 2rem;
+    --s-page-header: 6rem 1.25rem 2.5rem;
+    --s-inner:       0 1.25rem 3rem;
+    --s-form:        1.75rem 1.25rem;
+    --g-form-row:    1fr;
+    --g-class-opts:  1fr;
+    --hero-crest:    100px;
+    --hero-justify:  flex-start;
+    --hero-cta-dir:  column;
+  }
+}
+
+/* ── 400px ── */
+@media (max-width: 400px) {
+  :root {
+    --s-hero:        5rem 1rem 3.5rem;
+    --s-section:     4rem 1rem;
+    --s-cta:         4rem 1rem;
+    --s-page-header: 5.5rem 1rem 2rem;
+    --s-inner:       0 1rem 2.5rem;
+    --s-form:        1.25rem 1rem;
+    --hero-crest:    80px;
+  }
+}
+
+/* ── Marquee animation ── */
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+.animate-marquee { animation: marquee 30s linear infinite; }
+
+/* ── Scrollbar ── */
+::-webkit-scrollbar { width: 5px; }
+::-webkit-scrollbar-track { background: #060E1E; }
+::-webkit-scrollbar-thumb { background: #C9A227; border-radius: 3px; }
