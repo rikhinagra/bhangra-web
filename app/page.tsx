@@ -11,7 +11,7 @@ export default function Home() {
       <AboutSection />
       <ClassesSection />
       <VenueSection />
-      <FinalCTA />
+      {/* <FinalCTA /> */}
     </>
   );
 }

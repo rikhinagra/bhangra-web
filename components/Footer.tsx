@@ -108,7 +108,7 @@ export default function Footer() {
             Connect
           </h4>
           <div style={{ display:"flex", flexDirection:"column", gap:"0.6rem" }}>
-            {[{ href:"/contact", label:"Contact Us" },{ href:"/book", label:"Book a Class" }].map(({ href, label }) => (
+            {[{ href:"/book", label:"Book a Class" }].map(({ href, label }) => (
               <Link key={href} href={href}
                 style={{ fontSize:"0.95rem", color:"rgba(255,255,255,0.7)", transition:"color 0.3s" }}
                 onMouseEnter={e=>((e.currentTarget as HTMLElement).style.color="var(--color-gold)")}

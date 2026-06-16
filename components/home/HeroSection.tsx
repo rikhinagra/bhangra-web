@@ -1,8 +1,32 @@
 "use client";
 
+import { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
 import Image from "next/image";
+
+function CountUp({ target, suffix }: { target: number; suffix: string }) {
+  const [count, setCount] = useState(0);
+  const started = useRef(false);
+
+  useEffect(() => {
+    if (started.current) return;
+    started.current = true;
+    const duration = 1800;
+    const steps = 60;
+    const interval = duration / steps;
+    let step = 0;
+    const timer = setInterval(() => {
+      step++;
+      const eased = 1 - Math.pow(1 - step / steps, 3);
+      setCount(Math.round(eased * target));
+      if (step >= steps) clearInterval(timer);
+    }, interval);
+    return () => clearInterval(timer);
+  }, [target]);
+
+  return <>{count}{suffix}</>;
+}
 
 const fadeUp = (delay = 0) => ({
   initial: { opacity: 0, y: 40 },
@@ -24,10 +48,10 @@ export default function HeroSection() {
       minHeight: "100vh",
       display: "flex",
       flexDirection: "column",
-      justifyContent: "var(--hero-justify)" as React.CSSProperties["justifyContent"],
+      justifyContent: "flex-end",
       alignItems: "center",
       overflow: "hidden",
-      padding: "var(--s-hero)",
+      padding: "0",
       color: "#fff",
     }}>
 
@@ -38,29 +62,28 @@ export default function HeroSection() {
         <source src="/hero.mp4"  type="video/mp4"  />
       </video>
 
-      {/* Overlay — light enough to show video, dark enough for text readability */}
+      {/* Top navbar vignette — dark at very top so logo/links are always readable */}
       <div style={{
-        position:"absolute",inset:0,zIndex:1,
-        background:`radial-gradient(ellipse at 30% 50%,rgba(13,27,62,0.35) 0%,rgba(6,14,30,0.62) 65%),
-                    linear-gradient(180deg,rgba(6,14,30,0.15) 0%,rgba(6,14,30,0.55) 100%)`,
+        position:"absolute",inset:0,zIndex:3,pointerEvents:"none",
+        background:"linear-gradient(180deg, rgba(6,14,30,0.85) 0%, rgba(6,14,30,0.40) 15%, transparent 32%)",
       }}/>
 
-      {/* Dark vignette centred on the text — keeps video visible at the edges */}
+      {/* Gold shimmer at top edge */}
       <div style={{
         position:"absolute",inset:0,zIndex:2,pointerEvents:"none",
-        background:"radial-gradient(ellipse 70% 65% at 50% 50%, rgba(4,10,24,0.72) 0%, transparent 100%)",
+        background:"linear-gradient(180deg, rgba(255,215,0,0.08) 0%, transparent 10%)",
       }}/>
 
-      {/* Gold edge lines */}
+      {/* Main overlay — clear in middle, dark behind text at bottom */}
       <div style={{
-        position:"absolute",inset:0,zIndex:2,pointerEvents:"none",
-        background:"linear-gradient(180deg,rgba(255,215,0,0.08) 0%,transparent 8%,transparent 92%,rgba(255,215,0,0.08) 100%)",
+        position:"absolute",inset:0,zIndex:1,pointerEvents:"none",
+        background:"linear-gradient(180deg, transparent 25%, rgba(6,14,30,0.08) 50%, rgba(6,14,30,0.82) 80%, rgba(6,14,30,0.65) 95%, rgba(6,14,30,0.40) 100%)",
       }}/>
 
       {/* Content */}
-      <div style={{ position:"relative",zIndex:3,maxWidth:"1100px",textAlign:"center",width:"100%" }}>
+      <div style={{ position:"relative",zIndex:3,maxWidth:"1100px",textAlign:"center",width:"100%",padding:"0 2rem 2rem" }}>
 
-        {/* Crest */}
+        {/* Crest — commented out
         <motion.div
           initial={{ opacity:0, scale:0.6, rotate:-10 }}
           animate={{ opacity:1, scale:1,   rotate:0   }}
@@ -80,6 +103,35 @@ export default function HeroSection() {
             }}
           />
         </motion.div>
+        */}
+
+        {/* 300+ Dancers Trained */}
+        <motion.div
+          initial={{ opacity:0, y:20 }}
+          animate={{ opacity:1, y:0 }}
+          transition={{ duration:0.8, delay:0.1 }}
+          style={{ textAlign:"center", marginBottom:"2rem" }}
+        >
+          <div style={{
+            fontFamily:"var(--font-display)",
+            fontSize:"clamp(2rem,4vw,3rem)",
+            color:"var(--color-gold)",
+            lineHeight:1,
+            marginBottom:"0.3rem",
+            textShadow:"0 2px 16px rgba(0,0,0,0.8)",
+          }}>
+            <CountUp target={300} suffix="+"/>
+          </div>
+          <div style={{
+            fontSize:"clamp(0.65rem,1vw,0.78rem)",
+            letterSpacing:"0.22em",
+            textTransform:"uppercase",
+            color:"rgba(255,255,255,0.75)",
+            textShadow:"0 1px 8px rgba(0,0,0,0.9)",
+          }}>
+            Dancers Trained
+          </div>
+        </motion.div>
 
         {/* Eyebrow */}
         <motion.p {...fadeUp(0.2)} style={{
@@ -94,30 +146,26 @@ export default function HeroSection() {
         </motion.p>
 
         {/* Title */}
-        <h1 style={{
-          fontFamily:"var(--font-serif)",
-          fontWeight:500,
-          fontSize:"clamp(2.75rem,9vw,7.5rem)",
-          lineHeight:0.95,
-          letterSpacing:"-0.02em",
-          marginBottom:"1.75rem",
-          textShadow:"0 2px 20px rgba(0,0,0,0.7), 0 4px 40px rgba(0,0,0,0.5)",
-        }}>
-          {[
-            { text:"Feel the",  accent:false, delay:0.35 },
-            { text:"Dhol.",     accent:true,  delay:0.5  },
-            { text:"Move like", accent:false, delay:0.65 },
-            { text:"Punjab.",   accent:true,  delay:0.8  },
-          ].map(({ text, accent, delay }) => (
-            <motion.span key={text} {...fadeUp(delay)} style={{ display:"block" }}>
-              {accent
-                ? <em style={{ fontStyle:"italic", color:"var(--color-gold)" }}>{text}</em>
-                : text}
-            </motion.span>
-          ))}
-        </h1>
+        <motion.h1
+          {...fadeUp(0.35)}
+          style={{
+            fontFamily:"var(--font-serif)",
+            fontWeight:500,
+            fontSize:"clamp(1.75rem,4vw,3.25rem)",
+            lineHeight:1.2,
+            letterSpacing:"-0.02em",
+            marginBottom:"1.75rem",
+            textShadow:"0 2px 20px rgba(0,0,0,0.7), 0 4px 40px rgba(0,0,0,0.5)",
+            whiteSpace:"nowrap",
+          }}
+        >
+          Feel the{" "}
+          <em style={{ fontStyle:"italic", color:"var(--color-gold)" }}>Dhol.</em>
+          {" "}Move like{" "}
+          <em style={{ fontStyle:"italic", color:"var(--color-gold)" }}>Punjab.</em>
+        </motion.h1>
 
-        {/* Subtitle */}
+        {/* Subtitle — commented out
         <motion.p {...fadeUp(1.0)} style={{
           fontSize:"clamp(0.95rem,1.5vw,1.2rem)",
           fontWeight:300,
@@ -130,6 +178,7 @@ export default function HeroSection() {
           Authentic Bhangra classes in the heart of Chicagoland. Weekly sessions at the
           National India Hub, Schaumburg. Bring your beat, we&apos;ll teach you the rest.
         </motion.p>
+        */}
 
         {/* CTAs */}
         <motion.div {...fadeUp(1.2)} style={{
@@ -184,7 +233,7 @@ export default function HeroSection() {
 
       {/* Marquee */}
       <div style={{
-        position:"absolute",bottom:0,left:0,right:0,zIndex:4,
+        position:"relative",width:"100%",zIndex:4,
         background:"linear-gradient(90deg,var(--color-gold) 0%,var(--color-gold-bright) 50%,var(--color-gold) 100%)",
         color:"var(--color-navy-deep)",
         padding:"0.85rem 0",
