@@ -46,5 +46,7 @@ AGENTS.md
 CLAUDE.md
 .claude/
 
-# Video backups
+# Video files — hosted on Cloudinary
+public/hero.mp4
+public/hero.webm
 *.bak

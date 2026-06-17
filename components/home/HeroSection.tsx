@@ -58,8 +58,8 @@ export default function HeroSection() {
       {/* Video */}
       <video autoPlay muted loop playsInline poster="/banner.jpeg"
         style={{ position:"absolute",inset:0,width:"100%",height:"100%",objectFit:"cover",zIndex:0 }}>
-        <source src="/hero.webm" type="video/webm" />
-        <source src="/hero.mp4"  type="video/mp4"  />
+        <source src="https://res.cloudinary.com/dnr6utnzf/video/upload/q_auto/f_auto/v1781667768/hero_kqlaw8.webm" type="video/webm" />
+        <source src="https://res.cloudinary.com/dnr6utnzf/video/upload/q_auto/f_auto/v1781667164/hero_bhr9n5.mp4"  type="video/mp4"  />
       </video>
 
       {/* Top navbar vignette — dark at very top so logo/links are always readable */}
