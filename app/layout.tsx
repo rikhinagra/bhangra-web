@@ -32,6 +32,10 @@ export const metadata: Metadata = {
     "Learn authentic Punjabi Bhangra in Chicago. Weekly classes at National India Hub, Schaumburg. All ages, all levels welcome. Book your first class today.",
   keywords: ["bhangra", "dance classes", "Chicago", "Schaumburg", "Punjabi", "National India Hub"],
   metadataBase: new URL("https://www.ashkebhangra.com"),
+  icons: {
+    icon: "/icon.png",
+    apple: "/icon.png",
+  },
   openGraph: {
     title: "Ashke Bhangra Chicago",
     description: "Authentic Bhangra classes in the heart of Chicagoland.",
