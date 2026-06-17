@@ -36,7 +36,6 @@ const fadeUp = (delay = 0) => ({
 
 const marqueeWords = [
   "Bhangra","•","Jhoomer","•","Sammi","•","Gidha","•","Luddi","•",
-  "Bhangra","•","Jhoomer","•","Sammi","•","Gidha","•","Luddi","•",
 ];
 
 export default function HeroSection() {
@@ -247,7 +246,7 @@ export default function HeroSection() {
           letterSpacing:"0.22em",
           fontWeight:700,
         }}>
-          {marqueeWords.map((w,i) => <span key={i} style={{ flexShrink:0 }}>{w}</span>)}
+          {[...marqueeWords, ...marqueeWords].map((w,i) => <span key={i} style={{ flexShrink:0 }}>{w}</span>)}
         </div>
       </div>
     </section>
