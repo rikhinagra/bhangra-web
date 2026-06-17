@@ -31,10 +31,27 @@ export const metadata: Metadata = {
   description:
     "Learn authentic Punjabi Bhangra in Chicago. Weekly classes at National India Hub, Schaumburg. All ages, all levels welcome. Book your first class today.",
   keywords: ["bhangra", "dance classes", "Chicago", "Schaumburg", "Punjabi", "National India Hub"],
+  metadataBase: new URL("https://www.ashkebhangra.com"),
   openGraph: {
     title: "Ashke Bhangra Chicago",
     description: "Authentic Bhangra classes in the heart of Chicagoland.",
-    images: ["/banner.jpeg"],
+    url: "https://www.ashkebhangra.com",
+    siteName: "Ashke Bhangra Chicago",
+    images: [
+      {
+        url: "/og-image.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Ashke Bhangra Chicago — Bhangra Classes at National India Hub, Schaumburg",
+      },
+    ],
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Ashke Bhangra Chicago",
+    description: "Authentic Bhangra classes in the heart of Chicagoland.",
+    images: ["/og-image.jpg"],
   },
 };
 
