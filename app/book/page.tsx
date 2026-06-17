@@ -121,7 +121,7 @@ export default function BookPage() {
               <div style={{ display:"grid", gridTemplateColumns:"var(--g-form-row)", gap:"1.25rem", marginBottom:"1.25rem" }}>
                 <Field label="Preferred start date" error={errors.preferredDate?.message}><input {...register("preferredDate")} type="date" style={inp}/></Field>
                 <Field label="Bhangra experience"   error={errors.experience?.message}>
-                  <select {...register("experience")} style={inp}>
+                  <select {...register("experience")} style={inpSelect}>
                     <option value="">Choose one</option>
                     <option value="None">None — total beginner</option>
                     <option value="Some">Some — danced at weddings</option>
@@ -197,4 +197,13 @@ const inp: React.CSSProperties = {
   fontFamily:"var(--font-sans)", fontSize:"0.95rem", padding:"0.8rem 1rem",
   border:"1.5px solid rgba(255,215,0,0.2)", background:"rgba(255,255,255,0.04)",
   borderRadius:"4px", color:"#fff", width:"100%", outline:"none", transition:"border-color 0.3s",
+  boxSizing:"border-box", WebkitAppearance:"none", appearance:"none",
+};
+
+const inpSelect: React.CSSProperties = {
+  ...inp,
+  paddingRight:"2.5rem",
+  backgroundImage:`url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='rgba(255,215,0,0.7)' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E")`,
+  backgroundRepeat:"no-repeat",
+  backgroundPosition:"right 1rem center",
 };
