@@ -246,7 +246,7 @@ export default function HeroSection() {
           letterSpacing:"0.22em",
           fontWeight:700,
         }}>
-          {[...marqueeWords, ...marqueeWords].map((w,i) => <span key={i} style={{ flexShrink:0 }}>{w}</span>)}
+          {[...marqueeWords,...marqueeWords,...marqueeWords,...marqueeWords].map((w,i) => <span key={i} style={{ flexShrink:0 }}>{w}</span>)}
         </div>
       </div>
     </section>
