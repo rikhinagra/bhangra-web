@@ -45,3 +45,6 @@ graphify-out/
 AGENTS.md
 CLAUDE.md
 .claude/
+
+# Video backups
+*.bak
