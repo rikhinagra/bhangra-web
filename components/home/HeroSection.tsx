@@ -35,10 +35,8 @@ const fadeUp = (delay = 0) => ({
 });
 
 const marqueeWords = [
-  "BALLE BALLE","•","CHAK DE PHATTE","•",
-  "OYE HOYE","•","BHANGRA PA LAI","•",
-  "BALLE BALLE","•","CHAK DE PHATTE","•",
-  "OYE HOYE","•","BHANGRA PA LAI","•",
+  "Bhangra","•","Jhoomer","•","Sammi","•","Gidha","•","Luddi","•",
+  "Bhangra","•","Jhoomer","•","Sammi","•","Gidha","•","Luddi","•",
 ];
 
 export default function HeroSection() {
