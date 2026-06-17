@@ -64,7 +64,7 @@ export default function BookPage() {
             Step into the circle
           </p>
           <h1 style={{ fontFamily:"var(--font-serif)", fontWeight:500, fontSize:"clamp(2.5rem,7vw,5.5rem)", lineHeight:1, letterSpacing:"-0.02em", color:"#fff", marginBottom:"1.25rem" }}>
-            Book your <em style={{ fontStyle:"italic", color:"var(--color-gold)" }}>first</em> class.
+            Book your <em style={{ fontStyle:"italic", color:"var(--color-gold)" }}>class.</em>
           </h1>
           <p style={{ fontSize:"1.05rem", color:"rgba(255,255,255,0.65)", maxWidth:"520px", margin:"0 auto", lineHeight:1.65 }}>
             Fill out the form below and we&apos;ll reserve your spot.
@@ -116,20 +116,8 @@ export default function BookPage() {
               </div>
             </FormStep>
 
-            {/* Step 03 — What to bring */}
-            <FormStep num="03" title="What to bring">
-              <ul style={{ listStyle:"none", padding:0 }}>
-                {whatToBring.map(item => (
-                  <li key={item} style={{ display:"flex", alignItems:"flex-start", gap:"0.75rem", padding:"0.65rem 0", borderBottom:"1px solid rgba(255,215,0,0.08)", fontSize:"0.95rem", color:"rgba(255,255,255,0.78)" }}>
-                    <CheckCircle size={16} style={{ color:"var(--color-gold)", marginTop:"2px", flexShrink:0 }}/>
-                    {item}
-                  </li>
-                ))}
-              </ul>
-            </FormStep>
-
-            {/* Step 04 — When works? */}
-            <FormStep num="04" title="When works?" last>
+            {/* Step 03 — When works? */}
+            <FormStep num="03" title="When works?">
               <div style={{ display:"grid", gridTemplateColumns:"var(--g-form-row)", gap:"1.25rem", marginBottom:"1.25rem" }}>
                 <Field label="Preferred start date" error={errors.preferredDate?.message}><input {...register("preferredDate")} type="date" style={inp}/></Field>
                 <Field label="Bhangra experience"   error={errors.experience?.message}>
@@ -145,6 +133,18 @@ export default function BookPage() {
               <Field label="Anything we should know?">
                 <textarea {...register("notes")} rows={3} placeholder="Injuries, accessibility needs, dance goals…" style={{ ...inp, resize:"vertical" }}/>
               </Field>
+            </FormStep>
+
+            {/* Step 04 — What to bring */}
+            <FormStep num="04" title="What to bring" last>
+              <ul style={{ listStyle:"none", padding:0 }}>
+                {whatToBring.map(item => (
+                  <li key={item} style={{ display:"flex", alignItems:"flex-start", gap:"0.75rem", padding:"0.65rem 0", borderBottom:"1px solid rgba(255,215,0,0.08)", fontSize:"0.95rem", color:"rgba(255,255,255,0.78)" }}>
+                    <CheckCircle size={16} style={{ color:"var(--color-gold)", marginTop:"2px", flexShrink:0 }}/>
+                    {item}
+                  </li>
+                ))}
+              </ul>
             </FormStep>
 
             <button type="submit" disabled={isSubmitting} style={{
