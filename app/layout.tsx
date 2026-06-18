@@ -27,9 +27,9 @@ const manrope = Manrope({
 });
 
 export const metadata: Metadata = {
-  title: "Ashke Bhangra Chicago — Bhangra Classes at National India Hub, Schaumburg",
+  title: "Ashke Bhangra Chicago | Punjabi Bhangra Classes in Schaumburg, IL",
   description:
-    "Learn authentic Punjabi Bhangra in Chicago. Weekly classes at National India Hub, Schaumburg. All ages, all levels welcome. Book your first class today.",
+    "Authentic Punjabi Bhangra classes in Schaumburg, IL for kids, teens, and adults. Weekly sessions at National India Hub. Book your first class today.",
   keywords: ["bhangra", "dance classes", "Chicago", "Schaumburg", "Punjabi", "National India Hub"],
   metadataBase: new URL("https://www.ashkebhangra.com"),
   manifest: "/manifest.json",
@@ -69,6 +69,39 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     >
       <head>
         <script dangerouslySetInnerHTML={{ __html: `(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-5N9MNM4C');` }} />
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": ["LocalBusiness", "DanceGroup"],
+          "name": "Ashke Bhangra Chicago",
+          "description": "Weekly Punjabi Bhangra classes for all ages at the National India Hub in Schaumburg, IL.",
+          "url": "https://www.ashkebhangra.com",
+          "image": "https://www.ashkebhangra.com/og-image.jpg",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "930 National Parkway",
+            "addressLocality": "Schaumburg",
+            "addressRegion": "IL",
+            "postalCode": "60173",
+            "addressCountry": "US"
+          },
+          "areaServed": "Chicagoland",
+          "sameAs": [
+            "https://instagram.com/ashkebhangra",
+            "https://youtube.com/@ashkebhangra",
+            "https://facebook.com/ashkebhangra"
+          ],
+          "hasOfferCatalog": {
+            "@type": "OfferCatalog",
+            "name": "Bhangra Classes",
+            "itemListElement": [
+              { "@type": "Course", "name": "Little Sher", "description": "Bhangra fundamentals for ages 5-9 through games and stories." },
+              { "@type": "Course", "name": "Youth Crew", "description": "Performance-ready choreography and prop work for ages 10-16." },
+              { "@type": "Course", "name": "Beginner", "description": "Foundational footwork and Punjabi music theory for adults 17+." },
+              { "@type": "Course", "name": "Advanced", "description": "Performance training and Gidda/Bhangra fusion for adults 17+." },
+              { "@type": "Course", "name": "Wedding Choreography", "description": "Custom sangeet, baraat, and reception routines for all ages." }
+            ]
+          }
+        }) }} />
       </head>
       <body>
         <noscript>
