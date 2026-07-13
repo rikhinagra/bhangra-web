@@ -103,7 +103,7 @@ export default function BookPage() {
                 <Field label="Phone" error={errors.phone?.message}><input {...register("phone")} type="tel"   placeholder="(312) 555-0100" style={inp}/></Field>
               </div>
               <Field label="Dancer's Age" error={errors.age?.message}>
-                <input {...register("age")} type="number" min="3" max="99" placeholder="Age" style={{ ...inp, maxWidth:"160px" }}/>
+                <input {...register("age")} type="text" inputMode="numeric" pattern="[0-9]*" placeholder="Age" style={{ ...inp, maxWidth:"160px" }}/>
               </Field>
             </FormStep>
 
@@ -136,10 +136,10 @@ export default function BookPage() {
                 <Field label="Bhangra experience"   error={errors.experience?.message}>
                   <select {...register("experience")} style={inpSelect}>
                     <option value="">Choose one</option>
-                    <option value="None">None — total beginner</option>
-                    <option value="Some">Some — danced at weddings</option>
-                    <option value="Trained">Trained — performed before</option>
-                    <option value="Pro">Competitive / professional</option>
+                    <option value="None - total beginner">None - total beginner</option>
+                    <option value="Some - danced at weddings">Some - danced at weddings</option>
+                    <option value="Trained - performed before">Trained - performed before</option>
+                    <option value="Competitive / professional">Competitive / professional</option>
                   </select>
                 </Field>
               </div>

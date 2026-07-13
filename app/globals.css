@@ -152,3 +152,19 @@ img { max-width: 100%; display: block; }
 ::-webkit-scrollbar { width: 5px; }
 ::-webkit-scrollbar-track { background: #060E1E; }
 ::-webkit-scrollbar-thumb { background: #C9A227; border-radius: 3px; }
+
+/* ── Autofill override — prevent white background ── */
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+select:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0 1000px #0D1B3E inset !important;
+  -webkit-text-fill-color: #fff !important;
+  caret-color: #fff;
+}
+
+/* ── Hide number input spinners ── */
+input[type=number]::-webkit-outer-spin-button,
+input[type=number]::-webkit-inner-spin-button { -webkit-appearance: none; margin: 0; }
+input[type=number] { -moz-appearance: textfield; }
