@@ -38,6 +38,7 @@ const whatToBring = [
 
 export default function BookPage() {
   const [modalOpen, setModalOpen] = useState(false);
+  const [submitError, setSubmitError] = useState(false);
   const { register, handleSubmit, watch, setValue, reset, formState:{ errors, isSubmitting } } =
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     useForm<FormData>({ resolver: zodResolver(schema) as any });
@@ -45,14 +46,21 @@ export default function BookPage() {
 
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const onSubmit = async (data: any) => {
-    const res = await fetch("/api/book", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(data),
-    });
-    if (res.ok) {
-      reset();
-      setModalOpen(true);
+    setSubmitError(false);
+    try {
+      const res = await fetch("/api/book", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(data),
+      });
+      if (res.ok) {
+        reset();
+        setModalOpen(true);
+      } else {
+        setSubmitError(true);
+      }
+    } catch {
+      setSubmitError(true);
     }
   };
 
@@ -152,6 +160,11 @@ export default function BookPage() {
               </ul>
             </FormStep>
 
+            {submitError && (
+              <p style={{ color:"var(--color-saffron)", textAlign:"center", marginBottom:"1rem", fontSize:"0.9rem" }}>
+                Something went wrong. Please try again or email us at contact@ashkebhangra.com
+              </p>
+            )}
             <button type="submit" disabled={isSubmitting} style={{
               width:"100%", background: isSubmitting ? "rgba(255,215,0,0.5)" : "var(--color-gold)",
               color:"var(--color-navy-deep)", padding:"1.1rem", borderRadius:"4px",

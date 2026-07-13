@@ -9,17 +9,12 @@ export async function POST(req: NextRequest) {
       return NextResponse.json({ error: "Script URL not configured" }, { status: 500 });
     }
 
-    const response = await fetch(scriptUrl, {
+    await fetch(scriptUrl, {
       method: "POST",
-      headers: { "Content-Type": "application/json" },
+      redirect: "follow",
+      headers: { "Content-Type": "text/plain" },
       body: JSON.stringify(data),
     });
-
-    const result = await response.json();
-
-    if (!result.success) {
-      return NextResponse.json({ error: "Submission failed" }, { status: 500 });
-    }
 
     return NextResponse.json({ success: true });
   } catch {
