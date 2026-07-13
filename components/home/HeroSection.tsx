@@ -117,7 +117,7 @@ export default function HeroSection() {
             marginBottom:"0.3rem",
             textShadow:"0 2px 16px rgba(0,0,0,0.8)",
           }}>
-            <CountUp target={300} suffix="+"/>
+            <CountUp target={3000} suffix="+"/>
           </div>
           <div style={{
             fontSize:"clamp(0.65rem,1vw,0.78rem)",
