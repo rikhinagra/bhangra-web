@@ -45,10 +45,15 @@ export default function BookPage() {
 
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const onSubmit = async (data: any) => {
-    await new Promise(r => setTimeout(r, 600));
-    console.log("Booking submitted:", data);
-    reset();
-    setModalOpen(true);
+    const res = await fetch("/api/book", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(data),
+    });
+    if (res.ok) {
+      reset();
+      setModalOpen(true);
+    }
   };
 
   return (
