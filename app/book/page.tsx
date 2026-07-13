@@ -182,7 +182,7 @@ export default function BookPage() {
 
       <SuccessModal open={modalOpen} onClose={() => setModalOpen(false)}
         title="You're in!"
-        message="We've got your booking. Check your email for confirmation — and start stretching those shoulders."
+        message="We have got your booking. We will confirm your spot within 24 hours. Check your email for details."
       />
     </>
   );
