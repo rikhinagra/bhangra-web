@@ -31,9 +31,8 @@ function IconFacebook() {
 }
 
 const socials = [
-  { href:"https://instagram.com", label:"Instagram", Icon:IconInstagram, color:"#E1306C", bg:"rgba(225,48,108,0.12)" },
-  { href:"https://youtube.com",   label:"YouTube",   Icon:IconYouTube,   color:"#FF0000", bg:"rgba(255,0,0,0.12)"   },
-  { href:"https://facebook.com",  label:"Facebook",  Icon:IconFacebook,  color:"#1877F2", bg:"rgba(24,119,242,0.12)"},
+  { href:"https://www.instagram.com/ashke_bhangra_club_?igsh=MWhwcGk3cmZ5ZGRq", label:"Instagram", Icon:IconInstagram, color:"#E1306C", bg:"rgba(225,48,108,0.12)" },
+  { href:"https://www.facebook.com/ashke.bhangra.club?mibextid=wwXIfr", label:"Facebook", Icon:IconFacebook, color:"#1877F2", bg:"rgba(24,119,242,0.12)" },
 ];
 
 export default function Footer() {

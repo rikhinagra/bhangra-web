@@ -86,9 +86,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           },
           "areaServed": "Chicagoland",
           "sameAs": [
-            "https://instagram.com/ashkebhangra",
-            "https://youtube.com/@ashkebhangra",
-            "https://facebook.com/ashkebhangra"
+            "https://www.instagram.com/ashke_bhangra_club_",
+            "https://www.facebook.com/ashke.bhangra.club"
           ],
           "hasOfferCatalog": {
             "@type": "OfferCatalog",
