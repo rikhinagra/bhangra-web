@@ -50,7 +50,7 @@ export default function AboutSection() {
           marginBottom:"1.5rem",
           fontStyle:"italic",
         }}>
-          Welcome to Ashke Bhangra Chicago. We are more than a dance class—we are a vibrant platform built to participate, celebrate, and rejuvenate the rich heritage of Punjab.
+          Welcome to Ashke Bhangra Chicago. We are more than a dance class. We are a vibrant platform built to participate, celebrate, and rejuvenate the rich heritage of Punjab.
         </p>
 
         <p style={{ fontSize:"1rem", color:"rgba(255,255,255,0.72)", marginBottom:"1.25rem", lineHeight:1.8 }}>
