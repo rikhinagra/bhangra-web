@@ -146,7 +146,7 @@ img { max-width: 100%; display: block; }
   from { transform: translateX(0); }
   to   { transform: translateX(-25%); }
 }
-.animate-marquee { animation: marquee 30s linear infinite; }
+.animate-marquee { animation: marquee 8s linear infinite; }
 
 /* ── Scrollbar ── */
 ::-webkit-scrollbar { width: 5px; }

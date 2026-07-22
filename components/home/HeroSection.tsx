@@ -139,7 +139,7 @@ export default function HeroSection() {
           marginBottom:"1.5rem",
           textTransform:"uppercase",
         }}>
-          — ਚੱਕ ਦੇ ਫੱਟੇ —
+          ~ ਪੰਜਾਬੀ ਦੀ ਸ਼ਾਨ ਤੇ ਜਿੰਦ ਜਾਨ ਭੰਗੜਾ ~
         </motion.p>
 
         {/* Title */}
@@ -162,20 +162,21 @@ export default function HeroSection() {
           <em style={{ fontStyle:"italic", color:"var(--color-gold)" }}>Punjab.</em>
         </motion.h1>
 
-        {/* Subtitle — commented out
-        <motion.p {...fadeUp(1.0)} style={{
-          fontSize:"clamp(0.95rem,1.5vw,1.2rem)",
+        {/* Subtitle */}
+        <motion.p {...fadeUp(0.5)} style={{
+          fontFamily:"var(--font-serif)",
+          fontSize:"clamp(0.95rem,1.8vw,1.15rem)",
           fontWeight:300,
-          maxWidth:"600px",
+          fontStyle:"italic",
+          maxWidth:"560px",
           margin:"0 auto 2.25rem",
           lineHeight:1.75,
-          color:"rgba(255,255,255,0.92)",
+          color:"rgba(255,255,255,0.88)",
           textShadow:"0 1px 12px rgba(0,0,0,0.8)",
+          textAlign:"center",
         }}>
-          Authentic Bhangra classes in the heart of Chicagoland. Weekly sessions at the
-          National India Hub, Schaumburg. Bring your beat, we&apos;ll teach you the rest.
+          The rich Punjabi culture teaches everyone to remain happy and healthy, and instills good manners.
         </motion.p>
-        */}
 
         {/* CTAs */}
         <motion.div {...fadeUp(1.2)} style={{
