@@ -52,12 +52,12 @@ export default function Footer() {
           <Link href="/" style={{ display:"flex", alignItems:"center", gap:"0.75rem", marginBottom:"1rem" }}>
             <Image src="/logo.jpg" alt="Ashke Bhangra" width={48} height={48}
               style={{ borderRadius:"8px", border:"1.5px solid rgba(255,215,0,0.4)", objectFit:"cover", width:"48px", height:"48px" }}/>
-            <span style={{ fontFamily:"var(--font-serif)", display:"flex", flexDirection:"column", lineHeight:1.1 }}>
-              <span style={{ fontSize:"1.15rem", fontWeight:500, color:"#fff" }}>
-                Ashke <em style={{ color:"var(--color-saffron)", fontStyle:"italic" }}>Bhangra</em>
+            <span style={{ fontFamily:"var(--font-serif)", display:"flex", flexDirection:"column", gap:"0.1rem", alignItems:"center" }}>
+              <span style={{ fontSize:"1.15rem", fontWeight:500, color:"#fff", whiteSpace:"nowrap" }}>
+                Ashke <em style={{ color:"var(--color-gold)", fontStyle:"italic" }}>Bhangra</em> Club
               </span>
-              <span style={{ fontFamily:"var(--font-display)", fontSize:"0.58rem", letterSpacing:"0.28em", color:"var(--color-gold-muted)", textTransform:"uppercase" }}>
-                Club Chicago
+              <span style={{ fontFamily:"var(--font-display)", fontSize:"0.58rem", letterSpacing:"0.32em", color:"var(--color-gold-muted)", textTransform:"uppercase", textAlign:"center", width:"100%" }}>
+                Chicago
               </span>
             </span>
           </Link>

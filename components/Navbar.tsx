@@ -37,12 +37,12 @@ export default function Navbar() {
         <Link href="/" style={{ display:"flex", alignItems:"center", gap:"0.75rem", flexShrink:0, minWidth:0 }}>
           <Image src="/logo.jpg" alt="Ashke Bhangra" width={56} height={56}
             style={{ borderRadius:"9px", border:"1.5px solid rgba(255,215,0,0.5)", objectFit:"cover", width:"56px", height:"56px", flexShrink:0, filter:"drop-shadow(0 2px 10px rgba(0,0,0,0.8))" }}/>
-          <span style={{ fontFamily:"var(--font-serif)", display:"flex", flexDirection:"column", lineHeight:1.1, minWidth:0 }}>
-            <span style={{ fontSize:"1.15rem", fontWeight:500, color:"#fff", whiteSpace:"nowrap", textShadow:"0 1px 8px rgba(0,0,0,0.9), 0 2px 16px rgba(0,0,0,0.7)" }}>
-              Ashke<em style={{ color:"var(--color-gold)", fontStyle:"italic" }}> Bhangra</em>
+          <span style={{ fontFamily:"var(--font-serif)", display:"flex", flexDirection:"column", gap:"0.1rem", minWidth:0, alignItems:"center" }}>
+            <span style={{ fontSize:"clamp(1.05rem,1.8vw,1.25rem)", fontWeight:500, color:"#fff", whiteSpace:"nowrap", textShadow:"0 1px 8px rgba(0,0,0,0.9), 0 2px 16px rgba(0,0,0,0.7)" }}>
+              Ashke<em style={{ color:"var(--color-gold)", fontStyle:"italic" }}> Bhangra</em> Club
             </span>
-            <span style={{ fontFamily:"var(--font-display)", fontSize:"0.55rem", letterSpacing:"0.28em", color:"var(--color-gold-muted)", textTransform:"uppercase", textShadow:"0 1px 6px rgba(0,0,0,0.9)" }}>
-              Club Chicago
+            <span style={{ fontFamily:"var(--font-display)", fontSize:"clamp(0.58rem,0.9vw,0.62rem)", letterSpacing:"0.32em", color:"var(--color-gold-muted)", textTransform:"uppercase", textShadow:"0 1px 6px rgba(0,0,0,0.9)", textAlign:"center", width:"100%" }}>
+              Chicago
             </span>
           </span>
         </Link>
