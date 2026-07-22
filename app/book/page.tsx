@@ -13,7 +13,7 @@ const schema = z.object({
   lastName:      z.string().min(2, "Last name required"),
   email:         z.string().email("Valid email required"),
   phone:         z.string().min(7, "Phone number required"),
-  age:           z.string().min(1, "Age required"),
+  location:      z.string().min(1, "Location required"),
   classType:     z.string().min(1, "Please pick a class"),
   preferredDate: z.string().min(1, "Please pick a date"),
   experience:    z.string().min(1, "Please select experience"),
@@ -27,6 +27,7 @@ const classOptions = [
   { value:"Adult Beginner",       label:"Beginner",       sub:"17+"         },
   { value:"Adult Advanced",       label:"Advanced",       sub:"17+"         },
   { value:"Wedding Choreography", label:"Wedding Choreo", sub:"All ages"    },
+  { value:"Group Classes",        label:"Group Classes",  sub:"All ages"    },
 ];
 
 const whatToBring = [
@@ -102,8 +103,8 @@ export default function BookPage() {
                 <Field label="Email" error={errors.email?.message}><input {...register("email")} type="email" placeholder="you@email.com"   style={inp}/></Field>
                 <Field label="Phone" error={errors.phone?.message}><input {...register("phone")} type="tel"   placeholder="(312) 555-0100" style={inp}/></Field>
               </div>
-              <Field label="Dancer's Age" error={errors.age?.message}>
-                <input {...register("age")} type="text" inputMode="numeric" pattern="[0-9]*" placeholder="Age" style={{ ...inp, maxWidth:"160px" }}/>
+              <Field label="Your Location" error={errors.location?.message}>
+                <input {...register("location")} type="text" placeholder="City, State" style={{ ...inp, maxWidth:"260px" }}/>
               </Field>
             </FormStep>
 
