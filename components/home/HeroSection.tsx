@@ -123,8 +123,8 @@ export default function HeroSection() {
             fontSize:"clamp(0.65rem,1vw,0.78rem)",
             letterSpacing:"0.22em",
             textTransform:"uppercase",
-            color:"rgba(255,255,255,0.75)",
-            textShadow:"0 1px 8px rgba(0,0,0,0.9)",
+            color:"rgba(255,255,255,1)",
+            textShadow:"0 2px 6px rgba(0,0,0,1), 0 4px 20px rgba(0,0,0,1), 0 0 40px rgba(0,0,0,1)",
           }}>
             Dancers Trained
           </div>
@@ -134,10 +134,9 @@ export default function HeroSection() {
         <motion.p {...fadeUp(0.2)} style={{
           fontFamily:"var(--font-display)",
           fontSize:"clamp(0.72rem,2vw,0.95rem)",
-          letterSpacing:"0.3em",
+          letterSpacing:"0.05em",
           color:"var(--color-gold)",
           marginBottom:"1.5rem",
-          textTransform:"uppercase",
         }}>
           ~ ਪੰਜਾਬੀ ਦੀ ਸ਼ਾਨ ਤੇ ਜਿੰਦ ਜਾਨ ਭੰਗੜਾ ~
         </motion.p>
@@ -171,8 +170,8 @@ export default function HeroSection() {
           maxWidth:"560px",
           margin:"0 auto 2.25rem",
           lineHeight:1.75,
-          color:"rgba(255,255,255,0.88)",
-          textShadow:"0 1px 12px rgba(0,0,0,0.8)",
+          color:"rgba(255,255,255,1)",
+          textShadow:"0 2px 6px rgba(0,0,0,1), 0 4px 20px rgba(0,0,0,1), 0 0 40px rgba(0,0,0,1)",
           textAlign:"center",
         }}>
           The rich Punjabi culture teaches everyone to remain happy and healthy, and instills good manners.
