@@ -31,6 +31,9 @@ export const metadata: Metadata = {
   description:
     "Authentic Punjabi Bhangra classes in Schaumburg, IL for kids, teens, and adults. Weekly sessions at National India Hub. Book your first class today.",
   keywords: ["bhangra", "dance classes", "Chicago", "Schaumburg", "Punjabi", "National India Hub"],
+  verification: {
+    google: "ulncOEyLsPiXU8wQX56k-fEft4JFsDl8kvS6iXT0cek",
+  },
   metadataBase: new URL("https://www.ashkebhangra.com"),
   manifest: "/manifest.json",
   appleWebApp: {
